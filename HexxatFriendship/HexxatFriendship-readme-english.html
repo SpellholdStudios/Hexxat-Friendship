@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+    /*<![CDATA[*/
+    <!-- 
+      body {
+        margin: 0;
+        padding: 0;
+        cursor: default;
+        text-align: center;
+        color: #000;
+        background: #e3e3db url('http://spellholdstudios.net/images/sh_bg_main.jpg');
+      }
+      
+      #wrap {
+        text-align: left;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 88%;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
+        font-size: 12px;
+        color: #333;
+      }
+      
+      #header {
+        text-align: center;
+        background: #e5e5e5;
+        border: 1px solid #781808;
+        border-top: 5px solid #781808;
+        border-bottom: 5px solid #781808;
+        padding: 5px 0 13px 0;
+      }
+      
+      #header .about {
+        margin: 7px 0 0 0;
+        padding: 0;
+        font-style: italic;
+        color: #555;
+      }
+      
+      #header .menu {
+        font-weight: bold;
+        margin: 0;
+        color: #999;
+      }
+      
+      #header .menu a:link,
+      #header .menu a:visited {
+        color: #333;
+      }
+      
+      #maindiv {
+        margin: 0 auto;
+        margin-top: -20px;
+        width: 80%;
+      }
+      
+      #maindiv .content {
+        counter-increment: kman;
+        counter-reset: h2;
+        background-color: #e8e8e6;
+        padding: 0 0 25px 0;
+        margin: 50px auto;
+        border-width: 1px 1px 4px 10px;
+        border-style: solid;
+        border-color: #781808;
+        position: relative;
+        display: block;
+      }
+      
+      #maindiv .content::before {
+        content: counter(kman, lower-roman);
+        font-size: 100%;
+        font-weight: bold;
+        text-align: center;
+        color: #eee;
+        background-color: #781808;
+        width: 35px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+      }
+      
+      h2 {
+        display: block;
+        font-family: Verdana, Trebuchet MS, Arial, serif;
+        text-align: left;
+        text-indent: 30px;
+        padding: 0px;
+        margin: 20px 0 0 0;
+        border-bottom: dotted 2px #d0d0d0;
+        border-top: dotted 2px #d0d0d0;
+        background: #deded9;
+        font-size: 160%;
+      }
+      
+      h2::first-letter {
+        color: #781808;
+        background-color: transparent;
+      }
+      
+      #maindiv p {
+        font-size: 100%;
+        font-style: normal;
+        line-height: 150%;
+        padding: 0px;
+        margin: 10px auto;
+        width: 90%;
+        display: block;
+      }
+      
+      #maindiv address a:link,
+      #maindiv address a:visited {
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: transparent;
+        color: #eaeaea !important;
+        padding-right: 5px;
+        padding-left: 6px;
+      }
+      
+      #maindiv address a:focus,
+      #maindiv address a:hover {
+        text-decoration: none;
+        color: #F1F1F1;
+        border: 0;
+      }
+      
+      #maindiv address a:active {
+        color: #fff;
+        text-decoration: line-through;
+        border: none;
+      }
+      
+      #maindiv address {
+        font-size: 95%;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        color: #BBB;
+        background-color: #781808;
+        padding: 3px 0px 0px;
+        margin: 0px;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        display: block;
+        text-align: right;
+      }
+      
+      #maindiv .important {
+        font-size: 95%;
+        font-family: Verdana;
+        text-align: left;
+        background-color: #F1F1F1;
+        border-top: solid 1px #aaa;
+        border-bottom: solid 1px #aaa;
+        border-left: solid 6px #aaa;
+        border-right: solid 6px #aaa;
+        padding: 10px;
+        margin: 20px auto;
+        width: 80%;
+        line-height: 160%;
+      }
+      
+      #maindiv .important::before {
+        display: none;
+      }
+      
+      #maindiv .important p {
+        font-size: 100%;
+        text-indent: 0px;
+        margin: 5px 0 10px 0;
+      }
+      
+      #maindiv ul {
+        margin: -10px 0 0 30px;
+        *margin-left: 65px;
+      }
+      
+      #maindiv ol {
+        margin: -10px 0 0 35px;
+        *margin-left: 70px;
+      }
+      
+      #maindiv .important ul {
+        margin: -10px 0 0 15px;
+      }
+      
+      #maindiv .important ol {
+        margin: -10px 0 0 20px;
+      }
+      
+      #maindiv ul li {
+        list-style-type: square;
+        line-height: 150%;
+      }
+      
+      #maindiv ol li {
+        line-height: 150%;
+      }
+      
+      .t1 {
+        font-weight: bold;
+        width: 26%;
+        text-align: right;
+        clear: right;
+        float: left;
+        *float: none;
+        *margin-left: 65px;
+        line-height: 22px;
+      }
+      
+      .t2 {
+        text-align: left;
+        width: 73%;
+        float: right;
+        *float: none;
+        line-height: 22px;
+      }
+      
+      hr {
+        margin: 10px 0 10px 0;
+        padding: 0;
+        height: 1px;
+        border: 0;
+        color: #aaa;
+        background-color: #aaa;
+      }
+      
+      hr.floatfix {
+        clear: both;
+        color: #e8e8e6;
+        background-color: #e8e8e6;
+        *margin: 0;
+        *padding: 0;
+      }
+      
+      h1 {
+        font-size: 225%;
+        color: #444;
+        padding: 5px 0 5px 0;
+        margin: 0;
+        width: 100%;
+      }
+      
+      h3,
+      h4,
+      h5 {
+        margin: 10px 40px 10px 40px;
+        padding: 0;
+      }
+      
+      h3 {
+        font-size: 125%;
+        font-style: italic;
+      }
+      
+      h4 {
+        font-size: 125%;
+      }
+      
+      h5 {
+        font-size: 100%;
+      }
+      
+      h6 {
+        width: 100%;
+        margin: 10px 0 15px 0;
+        background-color: #ECECEC;
+        text-align: left;
+        text-indent: 30px;
+        font-size: 100%;
+        font-style: italic;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border-bottom: solid 1px #bbb;
+        border-top: solid 1px #bbb;
+      }
+      
+      a:link,
+      a:visited {
+        color: #781808;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:active {
+        color: #222;
+        border-bottom: 1px solid black;
+      }
+
+    -->
+    /*]]>*/
+    </style>
+    <title>SPELLHOLD STUDIOS - Hexxat Friendship</title>
+  </head>
+  <body>
+    <a name="top" id="top"></a>
+    <div id="wrap">
+
+      <div id="header">
+        <h1>Hexxat Friendship</h1>
+        <strong>A Spellhold Studios mod for Baldur's Gate 2 EE</strong>
+        <hr />
+        <p class="about">
+          Author: Lava Del'Vortel
+        </p>
+        <p class="about">
+
+          <a href="http://www.spellholdstudios.net/ie/npciep">Mod Website</a> &#8226;
+          <a href="">Mod Forum</a> &#8226;
+          Version: 1.1
+        </p>
+        <hr />
+        <p class="menu">
+          <a href="#intro">Introduction</a> &middot;
+          <a href="#installation">Installation</a> &middot;
+          <a href="#faq">FAQ</a> &middot;
+          <a href="#credits">Credits</a> &middot;
+          <a href="#version">Version History</a>
+        </p>
+
+      </div>
+      <div id="maindiv">
+
+        <!-- ================== I n t r o d u c t i o n ================== -->
+        <a name="intro" id="intro"></a>
+        <div class="content">
+          <h2>Introduction</h2><br>
+
+          <p>One of the things many find sorely lacking in the Bioware / Beamdog NPCs are the more complex relationships presented by modern NPC mods--especially in regards to "friendships", the relationships NPCs have with the PC when not romancing them.</p>
+
+          <p>This mod adds a series of dialogues with Hexxat.</p>
+
+          <p>Visit the <a href="http://www.spellholdstudios.net/ie/npciep">website</a> or <a href="http://www.shsforums.net/forum/647-cernd-friendship/">forum</a> for all the latest updates.</p><br>
+
+          <address>
+            <span class="footer">Hexxat Friendship &gt; Introduction</span> &#8226;<a href="#top">BACK TO TOP</a>
+          </address>
+        </div>
+
+        <!-- ================== I n s t a l l a t i o n ================== -->
+        <a name="installation" id="installation"></a>
+        <div class="content">
+          <h2>Installation</h2><br>
+          <h5>Windows</h5>
+
+          <p>The Hexxat Friendship is a WeiDU mod, packaged in an extractable .ZIP archive. Simply unpack the mod package into your Baldur's Gate II EE directory and run "<em>setup-HexxatFriendship.exe</em>".
+          <p>To un-install, run "<em>setup-HexxatFriendship.exe</em>" again and select the un-install option.</p></br>
+
+		<center><hr style="width: 90%; color: #781808; background-color: #781808; " /></center><br>
+
+          <h5>Compatibility and Installation Order</h5>
+
+          <p>The Hexxat Friendship mod should be compatible with all WeiDU mods, however, we cannot test every single one. It is only compatible with BG2EE. If you do encounter an error, please let us know by posting the message at our forums.</p>
+          <br>
+
+          <address>
+            <span class="footer">Hexxat Friendship &gt; Installation</span> <a href="#top">BACK TO TOP</a>
+          </address>
+        </div>
+
+        <!-- ================== F A Q ================== -->
+        <a name="faq" id="faq"></a>
+        <div class="content">
+          <h2>Frequently Asked Questions</h2><br>
+
+          <p><strong>Q: Is the Hexxat Friendship compatible with XYZ mod?</strong><br />A: It most certainly should be, but we have not tested it with every single mod available.</p>
+          <p><strong>Q: When will the friendship start?</strong><br />A: After you join Hexxat. There may condition for some dialogues to fire, so just enjoy the game and the talks should come.</p>
+          <p><strong>Q: This mod isn't in character at *all*.</strong><br />A: We're always looking for ways to improve the characterisation in this mod, so please post any suggestions or constructive criticism on the <a href="http://www.shsforums.net">forums</a>.</p>
+          <p><strong>Q: Have you got any plans to expand the mod by adding more dialogues in future?</strong><br />A: There are no current plans to add to the mod, no.</p>
+          <p><strong>Q: How many dialogues are there added in total?</strong><br />A: With this mod installed, you should be able to experience up to 13 dialogues in SoA and up to 5 dialogues in ToB.</p>
+          <p><strong>Q: Does this mod change the game in any way besides adding more dialogue to Hexxat?</strong><br />A: No, it shouldn't.</p>
+          <p><strong>Q: Is there any chance that player initiated dialogue will be added in future?</strong><br />A: There are currently no plans for it.</p>
+          <p><strong>Q: I would like to translate the Hexxat Friendship mod into another language. Any chance you could TRAify the mod?</strong><br />A: Sure, we'd be happy to. If you are interested in translating, just send us a line and I'll see what I can do for the next version.</p><br>
+
+          <address>
+            <span class="footer">Hexxat Friendship &gt; FAQ</span> &#8226;<a href="#top">BACK TO TOP</a>
+          </address>
+        </div>
+
+        <!-- ================== C r e d i t s ================== -->
+        <a name="credits" id="credits"></a>
+        <div class="content">
+
+          <h2>Credits</h2><br>
+          <p>Thank you to everyone on the Interaction Expansion project team, and everyone who has contributed to the mod!</p>
+          <span class="t1">Concept and writing:</span> <span class="t2">Lava Del'Vortel</span><br />
+          <span class="t1">Proofreader:</span> <span class="t2">Dalmir_The_Dark</span><br />
+          <span class="t1">Additional text clean-up:</span> <span class="t2">hook71</span><br />
+
+          <hr class="floatfix" /><br>
+          <h5>Programs/tools used in creation:</h5><br />
+          <ul>
+            <li><a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>, by Wes Weimer, Valerio Bigiani (the bigg) and Wisp.</li>
+            <li><a href="https://github.com/Argent77/NearInfinity/releases">Near Infinity</a>, by Jon Olav Hauglid, FredSRichardson, and Argent77.</li>
+            <li><a href="http://www.rarlab.com/">WinRAR</a>, by Eugene Roshal/Alexander Roshal.</li>
+            <li><a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.</li>
+          </ul><br><br>
+
+          <h5>Copyright Notice:</h5>
+          <div class="important">
+            <p>The Hexxat Friendship was developed by Lava Del'Vortel, based on material from the game BG2 / BG2EE and their expansions.</p>
+            <p>All mod content is &copy; Lava Del'Vortel, based on Beamdog's material.</p>
+            <p>Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. | Enhanced Edition is by &copy; Beamdog.</p>
+            <p>Please note that any and all redistribution and/or hosting of this mod is expressly unwanted without permission from the author(s).</p>
+          </div><br>
+
+          <address>
+            <span class="footer">Hexxat Friendship &gt; Credits</span> &#8226;<a href="#top">BACK TO TOP</a>
+          </address>
+        </div>
+
+        <!-- ================== V e r s i o n   H i s t o r y ================== -->
+        <a name="version" id="version"></a>
+
+        <div class="content">
+          <h2>Version history</h2><br>
+ 
+          <h6>Version 1.0 (October, 2022)</h6>
+          <ul>
+            <li>Initial release.</li>
+          </ul>
+          
+          <h6>Version 1.1 (October, 2022)</h6>
+          <ul>
+            <li>Additional text clean-up by hook71.</li>
+          </ul>
+          
+          <br>
+ 
+          <address>
+            <span class="footer">Hexxat Friendship &gt; Version History</span> &#8226;<a href="#top">BACK TO TOP</a>
+          </address>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>

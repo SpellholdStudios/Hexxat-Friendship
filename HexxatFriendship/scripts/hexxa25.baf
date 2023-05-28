@@ -1,0 +1,198 @@
+///////////////////////////////////////
+//////////// TIMERED TALKS ////////////
+///////////////////////////////////////
+
+IF
+	InParty(Myself)
+	Global("L#HexxatFriendshipActive25","GLOBAL",0)
+	!Global("L#HexxatFriendshipActive","GLOBAL",3)
+	OR(3)
+	 !Gender(Player1,FEMALE)
+	 Global("HexxatRomanceActive","GLOBAL",3)
+	 Global("HexxatRomanceActive","GLOBAL",0)
+THEN
+	RESPONSE #100
+	  RealSetGlobalTimer("L#HexxatFriendTimer25","GLOBAL",2000)
+		SetGlobal("L#HexxatFriendshipActive25","GLOBAL",1)
+		SetGlobal("L#HexxatFriendTalk25","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+OR(3)
+ Global("L#HexxatFriendshipActive","GLOBAL",0)
+ Global("L#HexxatFriendshipActive","GLOBAL",1)
+ Global("L#HexxatFriendshipActive","GLOBAL",2)
+Global("L#HexxatFriendshipActive25","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobal("L#HexxatFriendshipActive","GLOBAL",3)
+END
+
+IF
+InParty(Myself)
+OR(3)
+ Global("L#HexxatFriendshipActive","GLOBAL",0)
+ Global("L#HexxatFriendshipActive","GLOBAL",1)
+ Global("L#HexxatFriendshipActive","GLOBAL",3)
+Global("L#HexxatFriendshipActive25","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("L#HexxatFriendshipActive","GLOBAL",2)
+END
+
+IF
+  InParty(Myself)
+	OR(2)
+		Global("L#HexxatFriendshipActive25","GLOBAL",1)
+		Global("L#HexxatFriendshipActive25","GLOBAL",2)
+	IfValidForPartyDialog(Player1)
+	IfValidForPartyDialog(Myself)
+	CombatCounter(0)
+	!See([ENEMY])
+	AreaType(DUNGEON)
+	RealGlobalTimerExpired("L#HexxatFriendTimer25","GLOBAL")
+	Global("L#HexxatFriendToBInDungeon","GLOBAL",0)
+	OR(3)
+		Global("L#HexxatFriendTalk25","GLOBAL",1)
+		Global("L#HexxatFriendTalk25","GLOBAL",4)
+		Global("L#HexxatFriendTalk25","GLOBAL",7)
+THEN
+	RESPONSE #100
+	  SetGlobal("L#HexxatFriendToBInDungeon","GLOBAL",1)
+END
+
+IF
+  InParty(Myself)
+	OR(2)
+		Global("L#HexxatFriendshipActive25","GLOBAL",1)
+		Global("L#HexxatFriendshipActive25","GLOBAL",2)
+	IfValidForPartyDialog(Player1)
+	IfValidForPartyDialog(Myself)
+	CombatCounter(0)
+	!See([ENEMY])
+	AreaType(DUNGEON)
+	RealGlobalTimerExpired("L#HexxatFriendTimer25","GLOBAL")
+	Global("L#HexxatFriendToBInDungeon","GLOBAL",1)
+	OR(3)
+		Global("L#HexxatFriendTalk25","GLOBAL",1)
+		Global("L#HexxatFriendTalk25","GLOBAL",4)
+		Global("L#HexxatFriendTalk25","GLOBAL",7)
+THEN
+	RESPONSE #100
+	  RealSetGlobalTimer("L#HexxatFriendTimer25","GLOBAL",120)
+	  SetGlobal("L#HexxatFriendToBInDungeon","GLOBAL",0)
+END
+
+IF
+  InParty(Myself)
+	OR(2)
+		Global("L#HexxatFriendshipActive25","GLOBAL",1)
+		Global("L#HexxatFriendshipActive25","GLOBAL",2)
+	IfValidForPartyDialog(Player1)
+	IfValidForPartyDialog(Myself)
+	CombatCounter(0)
+	!See([ENEMY])
+	!AreaType(DUNGEON)
+	RealGlobalTimerExpired("L#HexxatFriendTimer25","GLOBAL")
+	OR(3)
+		Global("L#HexxatFriendTalk25","GLOBAL",1)
+		Global("L#HexxatFriendTalk25","GLOBAL",4)
+		Global("L#HexxatFriendTalk25","GLOBAL",7)
+THEN
+	RESPONSE #100
+	  IncrementGlobal("L#HexxatFriendTalk25","GLOBAL",1)
+END
+
+
+IF
+  InParty(Myself)
+	OR(2)
+		Global("L#HexxatFriendshipActive25","GLOBAL",1)
+		Global("L#HexxatFriendshipActive25","GLOBAL",2)
+	IfValidForPartyDialog(Player1)
+	IfValidForPartyDialog(Myself)
+	CombatCounter(0)
+	!See([ENEMY])
+	!AreaType(DUNGEON)
+	OR(3)
+		Global("L#HexxatFriendTalk25","GLOBAL",2)
+		Global("L#HexxatFriendTalk25","GLOBAL",5)
+		Global("L#HexxatFriendTalk25","GLOBAL",8)
+THEN
+	RESPONSE #100
+	  MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+  InParty(Myself)
+	OR(2)
+		Global("L#HexxatFriendshipActive25","GLOBAL",1)
+		Global("L#HexxatFriendshipActive25","GLOBAL",2)
+	IfValidForPartyDialog(Player1)
+	IfValidForPartyDialog(Myself)
+	CombatCounter(0)
+	!See([ENEMY])
+	!AreaType(DUNGEON)
+	OR(2)
+		Global("L#HexxatFriendTalk25","GLOBAL",3)
+		Global("L#HexxatFriendTalk25","GLOBAL",6)
+THEN
+	RESPONSE #100
+	  RealSetGlobalTimer("L#HexxatFriendTimer25","GLOBAL",3600)
+	  IncrementGlobal("L#HexxatFriendTalk25","GLOBAL",1)
+END
+
+///////////////////////////////////////
+//////////// SCENERY TALKS ////////////
+///////////////////////////////////////
+
+//FLAMING FIST
+
+IF
+InParty(Myself)
+Global("L#HexxatDiscussedFlamingFist","GLOBAL",1)
+!Global("L#HexxatFriendshipActive","GLOBAL",3)
+IfValidForPartyDialog(Player1)
+IfValidForPartyDialog(Myself)
+AreaCheck("AR5011")
+CombatCounter(0)
+!See([ENEMY])
+THEN
+	RESPONSE #100
+SetGlobal("L#HexxatDiscussedFlamingFist","GLOBAL",2)
+END
+
+IF
+Global("L#HexxatDiscussedFlamingFist","GLOBAL",2)
+THEN
+	RESPONSE #100
+	  MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
+END
+
+//NYALEE'S HEART
+
+IF
+InParty(Myself)
+Global("L#HexxatDiscussedNya","GLOBAL",0)
+IfValidForPartyDialog(Player1)
+IfValidForPartyDialog(Myself)
+AreaCheck("AR5201")
+PartyHasItem("hgheart")
+CombatCounter(0)
+!See([ENEMY])
+THEN
+	RESPONSE #100
+SetGlobal("L#HexxatDiscussedNya","GLOBAL",1)
+END
+
+IF
+Global("L#HexxatDiscussedNya","GLOBAL",1)
+THEN
+	RESPONSE #100
+	  MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
+END

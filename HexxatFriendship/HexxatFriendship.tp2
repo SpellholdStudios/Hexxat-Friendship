@@ -1,0 +1,25 @@
+BACKUP ~HexxatFriendship/backup~
+AUTHOR ~Lava Del'Vortel~
+VERSION ~1.1~
+README ~HexxatFriendship/hexxatfriendship-readme-%LANGUAGE%.html~ ~hexxatfriendship/hexxatfriendship-readme-english.html~
+
+AUTO_TRA ~HexxatFriendship/translations/%s~
+
+LANGUAGE ~English~
+         ~English~
+         ~HexxatFriendship/translations/english/setup.tra~
+
+BEGIN @1
+DESIGNATED 0 LABEL ~hexxat_friendship~
+
+/* CamDawg's custom IsValidForPartyDialogue() state. Thanks Cam! covers STATE_CONFUSED, STATE_FEEBLEMINDED, STATE_SILENCED, STATE_DEAD, STATE_ACID_DEATH, STATE_FLAME_DEATH, STATE_EXPLODING_DEATH, STATE_STONE_DEATH, STATE_FROZEN_DEATH, STATE_HELPLESS, STATE_STUNNED, STATE_PANIC, STATE_BERSERK, STATE_SLEEPING */
+   
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
+
+// Compiling dialogue & scripts SOA
+COMPILE ~hexxatfriendship/dialogue/hexxatj.d~
+EXTEND_TOP ~hexxat.bcs~ ~hexxatfriendship/scripts/hexxat.baf~
+
+// Compiling dialogue & scripts TOB
+COMPILE ~hexxatfriendship/dialogue/hexxa25j.d~
+EXTEND_TOP ~hexxa25.bcs~ ~hexxatfriendship/scripts/hexxa25.baf~
