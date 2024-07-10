@@ -9,6 +9,10 @@ LANGUAGE ~English~
          ~English~
          ~HexxatFriendship/translations/english/setup.tra~
 
+LANGUAGE ~Russian (by Jarly)~
+         ~Russian~
+         ~HexxatFriendship/translations/russian/setup.tra~
+
 BEGIN @1
 DESIGNATED 0 LABEL ~hexxat_friendship~
 
