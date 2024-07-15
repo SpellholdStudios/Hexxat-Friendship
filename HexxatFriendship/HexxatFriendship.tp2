@@ -1,6 +1,6 @@
 BACKUP ~HexxatFriendship/backup~
 AUTHOR ~Lava Del'Vortel~
-VERSION ~1.1~
+VERSION ~1.2~
 README ~HexxatFriendship/hexxatfriendship-readme-%LANGUAGE%.html~ ~hexxatfriendship/hexxatfriendship-readme-english.html~
 
 AUTO_TRA ~HexxatFriendship/translations/%s~
